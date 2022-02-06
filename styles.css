@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sub-container {
+    margin-left: 20%;
+}
+
+.heading {
+    padding: 2%;
+    padding-left: 0;
+    display: flex;
+    justify-content: start;
+}
+.top-heading {
+    font-weight: 400;
+    font-size: 2rem;
+    padding-right: 2%;
+}
+
+.nifty {
+    color: gray;
+    padding-top: 1%;
+}
+
+.table {
+    width: 70%;
+}
+
+.table-heading{
+    display: flex;
+    flex-direction: row;
+    background-color: #e6e6e6;
+    font-size: 14px;
+    color: #44475b;
+    width: 100%;
+}
+
+.company {
+    width: 43%;
+    padding: 2% 1.5%;
+}
+
+.market-price{
+    width: 27%;
+    padding: 2% 1.5%;
+}
+
+.buy {
+    width: 10%;
+    padding: 2% 1.5%;
+    text-align: center;
+}
+
+.sell {
+    width: 10%;
+    padding: 2% 1.5%;
+    text-align: center;
+}
+
+.watchlist{
+    width: 10%;
+    padding: 2% 1.5%;
+    text-align: center;
+}
+
+.company-row {
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+}
+
+.change-pos {
+    padding-top: 1%;
+    font-size: 13px;
+    color: #00d09c;
+}
+
+.change-neg {
+    padding-top: 1%;
+    font-size: 13px;
+    color: red;
+}
+
+.buy-button {
+    background-color: #00d09c;
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 12%;
+    font-size: 1rem;
+    transition: 0.7s;
+}
+
+.buy-button:hover {
+    transform: scale(1.2);
+}
+
+.sell-button {
+    border: 1px solid #00d09c;
+    color: #00d09c;
+    background-color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 12%;
+    font-size: 1rem;
+    transition: 0.7s;
+}
+
+.sell-button:hover {
+    transform: scale(1.2);
+}
+
+.company-row:hover {
+    background-color: #f0f0f0;
+}
