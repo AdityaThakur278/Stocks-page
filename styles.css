@@ -65,6 +65,8 @@
     width: 10%;
     padding: 2% 1.5%;
     text-align: center;
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
 .company-row {
@@ -117,4 +119,14 @@
 
 .company-row:hover {
     background-color: #f0f0f0;
+}
+
+@media only screen and (max-device-width: 700px) {
+    .sub-container {
+        margin: 4%;
+    }
+
+    .table {
+        width: 100%;
+    }
 }
