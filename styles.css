@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  color: #44475b;
 }
 
 .sub-container {
@@ -426,6 +427,7 @@
 
 .asset .heading-name {
     font-size: 1.4rem;
+    margin-right: 3%;
 }
 
 .asset .table-heading {
