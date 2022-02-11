@@ -1,36 +1,434 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 .sub-container {
-    margin-left: 20%;
+  display: flex;
+  flex-direction: row;
 }
 
-.heading {
-    padding: 2%;
-    padding-left: 0;
-    display: flex;
-    justify-content: start;
+/* company-data-column */
+.company-data {
+  width: 33%;
+  margin-left: 2%;
+}
+
+.company-data .heading {
+  padding: 4% 0;
+  display: flex;
+  justify-content: start;
 }
 .top-heading {
-    font-weight: 400;
-    font-size: 2rem;
-    padding-right: 2%;
+  font-weight: 400;
+  font-size: 2rem;
+  padding-right: 1%;
 }
-
 .nifty {
-    color: gray;
-    padding-top: 1%;
+  color: gray;
+  padding-top: 2%;
 }
 
-.table {
-    width: 70%;
+.company-data .table {
+  box-shadow: 1px 1px 3px 3px #e6e6e6;
 }
 
-.table-heading{
+.table-heading {
+  display: flex;
+  flex-direction: row;
+  background-color: #e6e6e6;
+  font-size: 14px;
+  color: #44475b;
+  width: 100%;
+}
+
+.company {
+  display: flex;
+  align-items: center;
+  width: 43%;
+  padding: 2% 1.5%;
+  padding-left: 3%;
+}
+
+.market-price {
+  width: 27%;
+  padding: 2% 1.5%;
+}
+
+.buy {
+  width: 15%;
+  padding: 2% 1.5%;
+  text-align: center;
+}
+
+.sell {
+  width: 15%;
+  padding: 2% 1.5%;
+  text-align: center;
+}
+
+.company-row {
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+}
+
+.change-pos {
+  padding-top: 1%;
+  font-size: 13px;
+  color: #00d09c;
+}
+
+.change-neg {
+  padding-top: 1%;
+  font-size: 13px;
+  color: red;
+}
+
+.buy-button {
+  background-color: #00d09c;
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 12%;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.buy-button:hover {
+  transform: scale(1.2);
+}
+
+.sell-button {
+  border: 1px solid #00d09c;
+  color: #00d09c;
+  background-color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 12%;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.sell-button:hover {
+  transform: scale(1.2);
+}
+
+.company-row:hover {
+  background-color: #e5faf5;
+}
+
+.transaction {
+  width: 33%;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+/* pending-transaction-column */
+
+.pending-transaction {
+  box-shadow: 1px 1px 3px 3px #e6e6e6;
+}
+
+.pending-transaction .heading {
+  display: flex;
+  flex-direction: row;
+  padding: 3%;
+}
+
+.pending-transaction .heading-name {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-right: 2%;
+}
+
+.transaction-type,
+.transaction-type-buy,
+.transaction-type-sell {
+  width: 10%;
+  padding: 2% 1.5%;
+  text-align: center;
+}
+
+.transaction-type-buy {
+  color: #00d09c;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.transaction-type-sell {
+  color: red;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.company-name,
+.target-price,
+.quantity,
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-name {
+  width: 32%;
+  padding: 2% 1.5%;
+}
+
+.target-price {
+  width: 23%;
+  padding: 2% 1.5%;
+}
+
+.quantity {
+  width: 13%;
+  padding: 2% 1.5%;
+}
+
+.total {
+  width: 22%;
+  padding: 2% 1.5%;
+}
+
+/* completed-transaction-column */
+
+.completed-transaction {
+  box-shadow: 1px 1px 3px 3px #e6e6e6;
+  margin-top: 5%;
+}
+
+.completed-transaction .heading {
+  display: flex;
+  flex-direction: row;
+  padding: 3%;
+}
+
+.completed-transaction .heading-name {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-right: 2%;
+}
+
+/* buy-sell-form-column */
+
+.third-column {
+    position: fixed;
+    margin-left: 72%;
+    margin-top: 2%;
+    width: 26%;
+
+    /* to consume 100% height */
+    display: flex;
+    flex-direction: column;
+    height: 94%;
+}
+
+.buy-sell-form {
+  color: #44475b;
+  flex: 0 1 auto;
+}
+
+.buy-sell-form .company-name {
+  background-color: #e5faf5;
+  padding: 4%;
+  width: auto;
+  text-align: center;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.buy-sell-sub-container {
+  box-shadow: 1px 1px 3px 3px #e6e6e6;
+}
+
+.buy-sell-tab {
+  display: flex;
+  flex-direction: row;
+  margin-left: 4%;
+}
+
+.buy-sell-tab-item {
+  padding: 6%;
+  padding-bottom: 2.5%;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.selected {
+  color: #00d09c;
+  border-bottom: 5px solid #00d09c;
+}
+
+.units-owned {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  margin-right: 7%;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.buy-sell-quantity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 4% 6%;
+  font-weight: 700;
+}
+
+.quantity-label,
+.target-price-label {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-input,
+.target-price-input {
+  border: none;
+  background-color: #e5faf5;
+  height: 2.2rem;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  width: 35%;
+  color: #00d09c;
+  font-weight: 700;
+  text-align: end;
+  padding-right: 2%;
+}
+
+.quantity-input:focus,
+.target-price-input:focus {
+  outline: none;
+}
+
+.buy-sell-target-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 6%;
+  padding-top: 0;
+  padding-bottom: 4%;
+  font-weight: 700;
+}
+
+.buy-sell-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 6%;
+  padding-top: 0;
+  padding-bottom: 4%;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.buy-sell-price-text {
+  display: flex;
+  align-items: center;
+}
+
+.buy-sell-market-price {
+  font-size: 1.5rem;
+}
+
+.buy-sell-info {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #7c7e8c;
+  /* margin-top: 6%; */
+}
+
+.buy-style {
+  border: none;
+  background-color: #00d09c;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  border-radius: 5px;
+  margin: 3% 6% 4% 6%;
+  width: 88%;
+  padding: 2.5% 0;
+  cursor: pointer;
+}
+
+.buy-style:hover {
+  transform: scale(1.02);
+}
+
+.sell-style {
+  border: 2px solid #00d09c;
+  color: #00d09c;
+  background-color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  border-radius: 5px;
+  margin: 3% 6% 4% 6%;
+  width: 88%;
+  padding: 2% 0;
+}
+
+.sell-style:hover {
+  transform: scale(1.02);
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 5% 0;
+}
+
+.no-transaction {
+  padding: 4%;
+  text-align: center;
+  color: #7c7e8c;
+  font-weight: 700;
+}
+
+.asset {
+  margin-top: 6%;
+  box-shadow: 1px 1px 3px 3px #e6e6e6;
+  Overflow-y: scroll;
+  flex: 1 1 auto;
+}
+
+.asset::-webkit-scrollbar {
+  width: 0.43rem;
+}
+
+.asset::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.asset::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.asset::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.asset .heading {
+    padding: 4%;
+    display: flex;
+    flex-direction: row;
+}
+
+.asset .heading-name {
+    font-size: 1.4rem;
+}
+
+.asset .table-heading {
     display: flex;
     flex-direction: row;
     background-color: #e6e6e6;
@@ -39,94 +437,38 @@
     width: 100%;
 }
 
-.company {
-    width: 43%;
-    padding: 2% 1.5%;
-}
-
-.market-price{
-    width: 27%;
-    padding: 2% 1.5%;
-}
-
-.buy {
-    width: 10%;
-    padding: 2% 1.5%;
-    text-align: center;
-}
-
-.sell {
-    width: 10%;
-    padding: 2% 1.5%;
-    text-align: center;
-}
-
-.watchlist{
-    width: 10%;
-    padding: 2% 1.5%;
-    text-align: center;
-    overflow: hidden;
-    word-wrap: break-word;
-}
-
-.company-row {
+.asset .table-row {
     display: flex;
     flex-direction: row;
     font-size: 15px;
 }
 
-.change-pos {
-    padding-top: 1%;
-    font-size: 13px;
-    color: #00d09c;
+.asset .table-row:hover {
+    background-color: #e5faf5;
 }
 
-.change-neg {
-    padding-top: 1%;
-    font-size: 13px;
-    color: red;
+.asset .average-price, .asset .quantity, .asset .total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3% 0;
 }
 
-.buy-button {
-    background-color: #00d09c;
-    border: none;
-    color: white;
-    width: 36px;
-    height: 36px;
-    border-radius: 12%;
-    font-size: 1rem;
-    transition: 0.7s;
+.asset .company-name {
+    display: block;
+    padding: 3% 0;
+    padding-left: 4%;
+    width: 35%;
 }
 
-.buy-button:hover {
-    transform: scale(1.2);
+.asset .average-price {
+    width: 24%;
 }
 
-.sell-button {
-    border: 1px solid #00d09c;
-    color: #00d09c;
-    background-color: white;
-    width: 36px;
-    height: 36px;
-    border-radius: 12%;
-    font-size: 1rem;
-    transition: 0.7s;
-}
+.asset .quantity {
+    width: 11%;
+}   
 
-.sell-button:hover {
-    transform: scale(1.2);
-}
-
-.company-row:hover {
-    background-color: #f0f0f0;
-}
-
-@media only screen and (max-device-width: 700px) {
-    .sub-container {
-        margin: 4%;
-    }
-
-    .table {
-        width: 100%;
-    }
+.asset .total {
+    width: 30%;
 }

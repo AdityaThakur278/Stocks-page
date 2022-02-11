@@ -1,112 +1,180 @@
 <!DOCTYPE html>
 
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&family=Ubuntu:ital,wght@0,400;0,700;1,300;1,400;1,700&display=swap"
-    rel="stylesheet"
-  />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&family=Ubuntu:ital,wght@0,400;0,700;1,300;1,400;1,700&display=swap"
+		rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css" />
+	<link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <div class="main-container">
-    <div class="sub-container">
-      <div class="heading">
-        <p class="top-heading">Top by Market Cap</p>
-        <p class="nifty">NIFTY100</p>
-      </div>
+	<div class="main-container">
+		<div class="sub-container">
 
-      <div class="table">
-        <div class="table-heading">
-          <p class="company">Company</p>
-          <p class="market-price">Market Price</p>
-          <p class="buy">Buy</p>
-          <p class="sell">Sell</p>
-          <p class="watchlist">Watchlist</p>
-        </div>
+			<div class="company-data">
+				<div class="heading">
+					<p class="top-heading">Top by Market Cap</p>
+					<p class="nifty">NIFTY50</p>
+				</div>
 
-        <div class="table-content">
-          <div class="company-row">
-            <p class="company">Reliance Industries</p>
-            <div class="market-price">
-              <p class="price">₹2,331.30</p>
-              <p class="change-pos">21.45(0.91%)</p>
-            </div>
+				<div class="table">
+					<div class="table-heading">
+						<p class="company">Company</p>
+						<p class="market-price">Market Price</p>
+						<p class="buy">Buy</p>
+						<p class="sell">Sell</p>
+						<!-- <p class="watchlist">Watchlist</p> -->
+					</div>
 
-            <p class="buy">
-              <button class="buy-button">B</button>
-            </p>
-            <p class="sell">
-              <button class="sell-button">S</button>
-            </p>
+					<div class="table-content">
+						<div class="loading">
+							Loading...
+						</div>
+					</div>
+				</div>
+			</div>
 
-            <p class="watchlist">
-              <img width="36px" src="images/add.png" alt="add" />
-            </p>
-          </div>
+			<div class="transaction">
 
-          <div class="company-row">
-            <p class="company">TCS</p>
-            <div class="market-price">
-              <p class="price">₹3814.90</p>
-              <p class="change-neg">-9.70(0.25%)</p>
-            </div>
+				<div class="pending-transaction">
+					<div class="heading">
+						<p class="heading-name">Pending Transaction</p>
+						<!-- <img src="images/loading.png" width="30px" height="30px" alt="pending"> -->
+					</div>
 
-            <p class="buy">
-              <button class="buy-button">B</button>
-            </p>
-            <p class="sell">
-              <button class="sell-button">S</button>
-            </p>
+					<div class="table">
 
-            <p class="watchlist">
-              <img width="36px" src="images/add.png" alt="add" />
-            </p>
-          </div>
+						<div class="table-heading">
+							<p class="transaction-type">Type</p>
+							<p class="company-name">Company</p>
+							<p class="target-price">Target Price</p>
+							<p class="quantity">Quantity</p>
+							<p class="total">Total</p>
+						</div>
 
-          <div class="company-row">
-            <p class="company">HDFC Bank</p>
-            <div class="market-price">
-              <p class="price">₹805.05</p>
-              <p class="change-neg">-3.90(0.48%)</p>
-            </div>
+						<div class="no-transaction">
+							No Pending Transactions
+						</div>
 
-            <p class="buy">
-              <button class="buy-button">B</button>
-            </p>
-            <p class="sell">
-              <button class="sell-button">S</button>
-            </p>
+					</div>
+				</div>
 
-            <p class="watchlist">
-              <img width="36px" src="images/add.png" alt="add" />
-            </p>
-          </div>
+				<!-- completed-transaction-column -->
 
-          <div class="company-row">
-            <p class="company">Hindustan Unilever</p>
-            <div class="market-price">
-              <p class="price">₹2306.60</p>
-              <p class="change-pos">8.45(0.37%)</p>
-            </div>
+				<div class="completed-transaction">
+					<div class="heading">
+						<p class="heading-name">Completed Transaction</p>
+						<img src="images/done.png" width="35px" height="30px" alt="completed">
+					</div>
 
-            <p class="buy">
-              <button class="buy-button">B</button>
-            </p>
-            <p class="sell">
-              <button class="sell-button">S</button>
-            </p>
+					<div class="table">
+						<div class="table-heading">
+							<p class="transaction-type">Type</p>
+							<p class="company-name">Company</p>
+							<p class="target-price">Price</p>
+							<p class="quantity">Quantity</p>
+							<p class="total">Total</p>
+						</div>
 
-            <p class="watchlist">
-              <img width="36px" src="images/add.png" alt="add" />
-            </p>
-          </div>
+						<!-- <div class="company-row">
+							<p class="transaction-type-sell">S</p>
+							<p class="company-name">Reliance Industries</p>
+							<p class="target-price">2331.30</p>
+							<p class="quantity">8</p>
+							<p class="total">18650.4</p>
+						</div> -->
 
-        </div>
-      </div>
-    </div>
-  </div>
+						<div class="no-transaction">
+							No Transactions
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="third-column">
+
+				<div class="buy-sell-form">
+					<div class="company-name">Loading...</div>
+
+					<div class="buy-sell-sub-container">
+
+						<div class="buy-sell-tab">
+							<p class="buy-sell-tab-item selected" onclick="handleBuySellTabClick(event)">BUY</p>
+							<p class="buy-sell-tab-item" onclick="handleBuySellTabClick(event)">SELL</p>
+							<p class="units-owned">Shares Owned - 0</p>
+						</div>
+
+						<div class="buy-sell-quantity">
+							<label class="quantity-label" for="shareQuantity">Share Quantity</label>
+							<input class="quantity-input" type="text" name="shareQuantity" value="0">
+						</div>
+
+						<div class="buy-sell-target-price">
+							<label class="target-price-label" for="target-price">Target Price</label>
+							<input class="target-price-input" type="text" name="target-price" value="0.0">
+						</div>
+
+						<div class="buy-sell-price">
+							<p class="buy-sell-price-text">Market Price</p>
+							<p class="buy-sell-market-price">NULL</p>
+						</div>
+
+						<p class="buy-sell-info">Order will expire when market closes today</p>
+
+						<button class="buy-sell-button buy-style">BUY</button>
+
+					</div>
+				</div>
+
+				<div class="asset">
+					<div class="heading">
+						<p class="heading-name">Assets Owned</p>
+						<img src="" alt="">
+					</div>
+
+					<div class="table">
+						<div class="table-heading">
+							<p class="company-name">Company</p>
+							<p class="average-price">Price</p>
+							<p class="quantity">Units</p>
+							<p class="total">Total</p>
+						</div>
+
+						<!-- <div class="table-row">
+							<p class="company-name">Company</p>
+							<p class="average-price">Price</p>
+							<p class="quantity">Units</p>
+							<p class="total">Total</p>
+						</div> -->
+
+						<div class="no-transaction">
+							No Assests
+						</div>
+
+					</div>
+					
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<script src="index.js"></script>
+	<script>
+		function handleBuySellTabClick(event) {
+			if (event.target.innerHTML == "BUY") {
+				globals.buy = true;
+				globals.sell = false;
+			} else {
+				globals.buy = false;
+				globals.sell = true;
+			}
+			loadBuySellForm();
+		}
+	</script>
 </body>
