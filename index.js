@@ -331,6 +331,11 @@ function substractFromAssets(obj) {
     assestOwn[index].units = parseFloat(assestOwn[index].units) - parseFloat(obj.quantity);
     assestOwn[index].total = (parseFloat(assestOwn[index].total) - parseFloat(obj.total)).toFixed(2);
 
+    // Update total investment
+    globals.totalInvestment = (parseFloat(globals.totalInvestment) - parseFloat(obj.total)).toFixed(2);
+    document.querySelector(".asset .total-investment .value").innerHTML = "₹" + globals.totalInvestment;
+    loadBuySellForm();
+
     if(parseFloat(assestOwn[index].units) > 0) {
         let avgPrice = (parseFloat(assestOwn[index].total) / parseFloat(assestOwn[index].units)).toFixed(2);
         let tableRow = document.getElementById("asset" + obj.company);
@@ -346,11 +351,6 @@ function substractFromAssets(obj) {
     document.getElementById("asset" + obj.company).remove();
     assestOwn[index] = {};
     delete assestIndex[obj.company];
-
-    // Update total investment
-    globals.totalInvestment = (parseFloat(globals.totalInvestment) - parseFloat(obj.total)).toFixed(2);
-    document.querySelector(".asset .total-investment .value").innerHTML = "₹" + globals.totalInvestment;
-    loadBuySellForm();
 
     // If assets is empty, Show No Assets
     if(Object.keys(assestIndex).length == 0) {
