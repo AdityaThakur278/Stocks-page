@@ -329,11 +329,9 @@ function substractFromAssets(obj) {
 
     assestOwn[index].units = parseFloat(assestOwn[index].units) - parseFloat(obj.quantity);
     assestOwn[index].total = (parseFloat(assestOwn[index].total) - parseFloat(obj.total)).toFixed(2);
-
+    
     if(parseFloat(assestOwn[index].units) > 0) {
-
-        let avgPrice = parseFloat(assestOwn[index].total) / parseFloat(assestOwn[index].units);
-
+        let avgPrice = (parseFloat(assestOwn[index].total) / parseFloat(assestOwn[index].units)).toFixed(2);
         let tableRow = document.getElementById("asset" + obj.company);
         tableRow.querySelector(".average-price").innerHTML = avgPrice;
         tableRow.querySelector(".quantity").innerHTML = assestOwn[index].units;
