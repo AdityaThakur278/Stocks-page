@@ -419,15 +419,23 @@
   background: #555;
 }
 
+.asset .heading-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .asset .heading {
-    padding: 4%;
     display: flex;
     flex-direction: row;
+    padding: 4%;
 }
 
 .asset .heading-name {
     font-size: 1.4rem;
-    margin-right: 3%;
+    margin-right: 10%;
+    display: flex;
+    align-items: center;
 }
 
 .asset .table-heading {
@@ -473,4 +481,24 @@
 
 .asset .total {
     width: 30%;
+}
+
+.total-investment {
+    margin-top: 3%;
+    margin-right: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-items: center;
+}
+
+.total-investment .text {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.total-investment .value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #00d09c;
 }

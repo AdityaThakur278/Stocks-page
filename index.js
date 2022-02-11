@@ -14,6 +14,7 @@ const globals = {
     targetPrice: 0,
     symbol: null,
     price: null,
+    totalInvestment: 0,
 }
 const assestIndex = {}
 
@@ -307,7 +308,7 @@ function checkPendingTransaction() {
             deleteOperation = 1;
             pendingTransactionCommon("S", company, targetPrice, quantity, total, pendingId);
         
-            // Update Assets (Remaining)
+            // Update Assets 
             substractFromAssets(completeTransaction.at(-1));
 
             // delete from pending transaction array
@@ -329,7 +330,7 @@ function substractFromAssets(obj) {
 
     assestOwn[index].units = parseFloat(assestOwn[index].units) - parseFloat(obj.quantity);
     assestOwn[index].total = (parseFloat(assestOwn[index].total) - parseFloat(obj.total)).toFixed(2);
-    
+
     if(parseFloat(assestOwn[index].units) > 0) {
         let avgPrice = (parseFloat(assestOwn[index].total) / parseFloat(assestOwn[index].units)).toFixed(2);
         let tableRow = document.getElementById("asset" + obj.company);
@@ -345,6 +346,10 @@ function substractFromAssets(obj) {
     document.getElementById("asset" + obj.company).remove();
     assestOwn[index] = {};
     delete assestIndex[obj.company];
+
+    // Update total investment
+    globals.totalInvestment = (parseFloat(globals.totalInvestment) - parseFloat(obj.total)).toFixed(2);
+    document.querySelector(".asset .total-investment .value").innerHTML = "₹" + globals.totalInvestment;
     loadBuySellForm();
 
     // If assets is empty, Show No Assets
@@ -395,6 +400,8 @@ function addToAssets(obj) {
         emptyDiv && emptyDiv.remove();
     }
 
+    globals.totalInvestment = (parseFloat(globals.totalInvestment) + parseFloat(obj.total)).toFixed(2);
+    document.querySelector(".asset .total-investment .value").innerHTML = "₹" + globals.totalInvestment;
     loadBuySellForm();
 }
 
