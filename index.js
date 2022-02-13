@@ -164,6 +164,27 @@ function sellSelect(event) {
 }
 
 function buySellTransaction(event) {
+
+    // Regex for buy-sell-form
+    let shares = globals.shareQuantity;
+    let targetPrice = globals.targetPrice;
+    const regex = new RegExp(/^\d*\.?\d*$/);
+    
+    if(!regex.test(shares) || !regex.test(targetPrice)) {
+        alert("Enter proper input");
+        return;
+    }
+
+    if(shares == 0) {
+        alert("Share Quantity must be greater than zero!");
+        return;
+    }
+
+    if(targetPrice == 0) {
+        alert("Traget Price must be greater than zero!");
+        return;
+    }
+
     if(event.target.innerHTML == "BUY") {
         buyTransaction();
     }
